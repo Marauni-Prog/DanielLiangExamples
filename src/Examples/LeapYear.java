@@ -4,13 +4,14 @@ import java.util.Scanner;
 
 public class LeapYear {
 	public static void main(String[]args) {
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter Year");
-		int year=scan.nextInt();
-		if(findLeapYear(year)) {
-			System.out.println(year+" is a leap Year");
-		}else 
-			System.out.println(year+ " is not a leap year");
+		try (Scanner scan = new Scanner(System.in)) {
+			System.out.println("Enter Year");
+			int year=scan.nextInt();
+			if(findLeapYear(year)) {
+				System.out.println(year+" is a leap Year");
+			}else 
+				System.out.println(year+ " is not a leap year");
+		}
 	}
 	public static boolean findLeapYear(int year) {
 		boolean leap=false;

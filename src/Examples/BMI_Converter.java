@@ -4,13 +4,14 @@ import java.util.Scanner;
 
 public class BMI_Converter {
 	public static void main(String[]args) {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Enter Height in cms");
-		double height=scanner.nextDouble()*0.01;
-		System.out.println("Enter weight in Kgs");
-		double weight=scanner.nextDouble();
-		System.out.println("Your BMI is "+findBmi(height,weight));
-		commentBmi(findBmi(height,weight));
+		try (Scanner scanner = new Scanner(System.in)) {
+			System.out.println("Enter Height in cms");
+			double height=scanner.nextDouble()*0.01;
+			System.out.println("Enter weight in Kgs");
+			double weight=scanner.nextDouble();
+			System.out.println("Your BMI is "+findBmi(height,weight));
+			commentBmi(findBmi(height,weight));
+		}
 		}
 public static double findBmi(double height, double weight) {
 	double BMI=weight/(height*height);
